@@ -2,15 +2,15 @@ import React from 'react';
 import {View, Image, StyleSheet, Text} from "react-native"
 import theme from "../../values/theme";
 
-const Picture = (props) => {
+const PictureContainer = (props) => {
     return (
         <View style={styles.container}>
             <Text style={styles.pictureTitle}>
-                Название
+               {props.title}
             </Text>
-                <Image source={require('../../assets/splash.png')} style={styles.img}></Image>
+                <Image source={{uri: props.url}} style={styles.img}></Image>
             <Text style={styles.pictureAuthor}>
-                Автор
+                by {props.author}
             </Text>
         </View>);
 };
@@ -20,28 +20,28 @@ const styles = StyleSheet.create({
         width: theme.picture.width-12,
         margin: 4,
         overflow: 'hidden',
-        borderColor: 'black',
-        borderWidth: 1,
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'space-around',
-
     },
     img: {
         height: 100,
         width: 100,
     },
     pictureTitle: {
-        padding: 5,
+        padding: 4,
         fontSize: 13,
         fontWeight: '700',
+        height: 30,
+        overflow: 'hidden',
+        textAlign: 'center'
     },
     pictureAuthor: {
-        padding: 3,
+        padding: 8,
         fontSize: 11,
         fontWeight: '500',
     }
 });
 
-export default Picture;
+export default PictureContainer;
