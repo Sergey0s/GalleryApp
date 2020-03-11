@@ -13,7 +13,7 @@ const generalScreen = (props) => {
         props.onGetPictures()
     }, []);
 
-    const sendNoteToEditor = (index) => {
+    const sendImageToImageScreen = (index) => {
         props.navigation.push(ScreenNames.image, {
             index: index,
             ...props.pictures[index],
@@ -32,8 +32,9 @@ const generalScreen = (props) => {
                 <View style={styles.container}>
                     {props.pictures.map((picture, index) => {
                         return <TouchableOpacity
+                            key = {index}
                             onPress={() => {
-                                sendNoteToEditor(index);
+                                sendImageToImageScreen(index);
                             }}
                         >
                             <PictureContainer

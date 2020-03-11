@@ -7,13 +7,13 @@ export default createStackNavigator ({
     [ScreenNames.general] : {
         screen: GeneralScreen,
         navigationOptions: {
-            header: null
+            headerShown: false
         }
     },
     [ScreenNames.image]: {
         screen: ImageScreen,
         navigationOptions: {
-            header: null
+            headerShown: false
         }
     }
 });
